@@ -48,6 +48,7 @@ generateCard.render = async (user) => {
 
 generateCard.generate = async (id) => {
   const res = await fetch(`http://localhost:8080/maimai/getuser/${id}`).then(r => r.json());
+  if (res[0].code == 400) return res[0].error;
   return await generateCard.render(res[0]);
 };
 

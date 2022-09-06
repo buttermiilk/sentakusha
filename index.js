@@ -12,6 +12,10 @@ app.listen(8080, async () => {
 
 app.get("/maimai/getuser/:useridx", async (req, res) => {
   const data = await maimai.GetPlayerProfileById(req.params.useridx, false);
+  if (data == "Invalid code" || data == "Not found") return res.status(400).json([{
+    error: data,
+    code: "400"
+  }]);
   return res.status(200).json([{
     name: data.name,
     avatar: data.avatar,
@@ -28,6 +32,10 @@ app.get("/maimai/getuser/:useridx", async (req, res) => {
 
 app.get("/maimai/render/:useridx", async (req, res) => {
   const data = await generateCard.generate(req.params.useridx);
+  if (data == "Invalid code" || data == "Not found") return res.status(400).json([{
+    error: data,
+    code: "400"
+  }]);
   const img = Buffer.from(data, 'base64');
   res.writeHead(200, {
     'Content-Type': 'image/png',

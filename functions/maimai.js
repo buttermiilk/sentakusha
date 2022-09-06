@@ -65,6 +65,7 @@ maimai.RefreshCookie = async () => {
 }
 
 maimai.GetPlayerProfileById = async (id) => {
+  if (id.length != 13) return "Invalid code";
   var response = await limit(() => maimaiPage(`/friend/search/searchUser/?friendCode=${encodeURIComponent(id)}`, {
     headers: {
       'Cookie': maimaiCookies
@@ -72,6 +73,7 @@ maimai.GetPlayerProfileById = async (id) => {
   }));
 
   var $ = cheerio.load(response.data)
+  if (!$(".trophy_block").attr(["classList"][1])) return "Not found";
 
   return {
     name: $('.name_block').text().trim(),
