@@ -10,11 +10,7 @@ app.listen(8080, async () => {
   console.log("Page started.");
 });
 
-app.get("/getUser/:useridx/:authKey", async (req, res) => {
-	if (req.params.authKey != process.env["AUTH"]) return res.status(400).json([{
-    error: "Unauthorized",
-    code: "400"
-  }]);
+app.get("/getUser/:useridx", async (req, res) => {
   const data = await maimai.GetPlayerProfileById(req.params.useridx, false);
   if (data == "Invalid code" || data == "Not found") return res.status(400).json([{
     error: data,
@@ -34,11 +30,7 @@ app.get("/getUser/:useridx/:authKey", async (req, res) => {
   }]);
 });
 
-app.get("/render/:useridx/:authKey", async (req, res) => {
-	if (req.params.authKey != process.env["AUTH"]) return res.status(400).json([{
-    error: "Unauthorized",
-    code: "400"
-  }]);
+app.get("/render/:useridx", async (req, res) => {
   const data = await generateCard.generate(req.params.useridx);
   if (data == "Invalid code" || data == "Not found") return res.status(400).json([{
     error: data,
