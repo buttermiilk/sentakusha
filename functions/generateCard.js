@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 import colors from "../util/colors.js";
 import fetch from "node-fetch";
 import fs from "fs";
