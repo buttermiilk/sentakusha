@@ -1,6 +1,6 @@
 {
   "name": "maimai-deluxe-api",
-  "version": "0.0.1-prerelease",
+  "version": "0.0.5-prerelease",
   "description": "A simple maimai DX scraper/crawler API",
   "main": "index.js",
   "scripts": {
