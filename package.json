@@ -23,7 +23,7 @@
     "fs": "^0.0.1-security",
     "node-fetch": "^3.2.10",
     "p-limit": "^4.0.0",
-    "puppeteer-core": "^5.2.1",
+    "puppeteer": "^5.2.1",
     "request": "^2.88.2"
   }
 }
