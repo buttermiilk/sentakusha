@@ -1,4 +1,4 @@
-<h1 align="center"><img src='https://media.vgm.io/products/37/11473/11473-1655072914.png' width='128' height='128'><br>sentakusha</h1>
+<h1 align="center"><img src='https://media.vgm.io/products/37/11473/11473-1655072914.png' height='128'><br>sentakusha</h1>
 <p align="center"><em>Code adapted and modified from different sources</em><br>A badly implemented express.js maimai crawler.</p>
 <p align="center">
   <a href="https://nodejs.org">
